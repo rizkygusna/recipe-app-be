@@ -22,7 +22,7 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 
 // connect to database
 mongoose.connect(
-  `mongodb+srv://gusnafarid:${DB_PASSWORD}@recipes.0wmo9b6.mongodb.net/?retryWrites=true&w=majority`
+  `mongodb+srv://gusnafarid:${DB_PASSWORD}@recipes.0wmo9b6.mongodb.net/test?retryWrites=true&w=majority`
 );
 
 app.listen(PORT, () => console.log("Server started at port: " + PORT));
