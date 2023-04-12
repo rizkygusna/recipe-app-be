@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import { config } from "dotenv";
 
 import { userRouter } from "./routes/users.js";
+import { recipeRouter } from "./routes/recipes.js";
 
 const app = express();
 // parses content type header json only
@@ -15,6 +16,7 @@ app.use(cors());
 
 // add user router as auth
 app.use("/auth", userRouter);
+app.use("/recipes", recipeRouter);
 
 // load env variables
 config();

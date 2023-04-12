@@ -11,4 +11,4 @@ const RecipeSchema = new mongoose.Schema({
 });
 
 // export collection of users to db
-export const UserModel = mongoose.model("recipes", RecipeSchema);
+export const RecipeModel = mongoose.model("recipes", RecipeSchema);
