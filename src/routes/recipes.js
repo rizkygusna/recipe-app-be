@@ -6,8 +6,8 @@ const router = express.Router();
 // get recipe
 router.get("/", async (req, res) => {
   try {
-    const res = await RecipeModel.find({});
-    res.json(response);
+    const recipes = await RecipeModel.find({});
+    res.json(recipes);
   } catch (error) {
     res.json(error);
   }
