@@ -22,6 +22,16 @@ app.use("/recipes", recipeRouter);
 config();
 const DB_PASSWORD = process.env.DB_PASSWORD;
 
+mongoose.set("toJSON", {
+  virtuals: true,
+  // exclude __v property
+  versionKey: false,
+  // add id property to response
+  transform: (doc, converted) => {
+    delete converted._id;
+  },
+});
+
 // connect to database
 mongoose.connect(
   `mongodb+srv://gusnafarid:${DB_PASSWORD}@recipes.0wmo9b6.mongodb.net/test?retryWrites=true&w=majority`
